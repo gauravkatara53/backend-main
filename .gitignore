@@ -1,0 +1,5 @@
+# Ignore uploads folder
+/uploads
+
+# Ignore .env file
+.env
