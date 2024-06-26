@@ -1,7 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 const bodyParser = require("body-parser");
+const userRoutes = require("./user");
+
 const multer = require("multer");
 const { initializeApp } = require("firebase/app");
 const {
@@ -136,6 +139,9 @@ app.get("/notes", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch notes" });
   }
 });
+
+// Use user routes
+app.use("/api/users", userRoutes);
 
 // Start server
 app.listen(PORT, () => {
